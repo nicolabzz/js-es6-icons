@@ -2,7 +2,6 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    /* font-family: 'Irish Grover', cursive; */
     font-family: 'Sue Ellen Francisco', cursive;
 }
 
@@ -10,7 +9,7 @@ body{
     background-color: lightgray;
 }
 
-.title {
+.header-title {
     background-color: white;
     font-size: 2rem;
     padding: 1rem;
@@ -40,3 +39,58 @@ body{
     border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
     border-image-slice: 1;
 }
+
+.container {
+    /* max-width: 1200px;
+    margin: 0 auto; */
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 100px;
+    /* justify-content: space-between; */
+}
+
+
+/* cards */
+#icon-container {
+    /* display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: wrap; */
+    width: 1190px;
+    margin: auto;
+}
+
+.box {
+    width: calc((100% / 5) - 20px);
+    margin: 10px 10px;
+    border-radius: .7rem;
+    background-color: #f5f5f5;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    padding: 2rem 0;
+    gap: 10px 0px;
+    -webkit-box-shadow: 
+    5px 5px 15px 5px #FF8080, 
+    -9px 5px 15px 5px #FFE488, 
+    -7px -5px 15px 5px #8CFF85, 
+    12px -5px 15px 5px #80C7FF, 
+    12px 10px 15px 7px #E488FF, 
+    -10px 10px 15px 7px #FF616B, 
+    -10px -7px 27px 1px #8E5CFF, 
+    5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: 2px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+.box i,.box span{
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+}
+
+span {
+    font-family: 'Irish Grover', cursive;
+}
+
+

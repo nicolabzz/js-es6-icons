@@ -139,3 +139,76 @@ let cardArray = [
 		color: 'blue'
 	}
 ];
+
+let containerHTML = document.getElementById('icon-container');
+let selectHTML = document.getElementById('select-category');
+let categories = ['All'];
+
+renderIconsHTLM (cardArray);
+getCategoriesHTML (cardArray);
+assignColorHTML (cardArray);
+
+selectHTML.addEventListener('change', () => {
+	filterBy(cardArray, selectHTML.value);
+});
+
+
+// function===========================
+function renderIconsHTLM (array){
+	containerHTML.innerHTML = '';    
+
+    for (let i = 0; i < array.length; i++) {
+		let item = document.createElement('div');
+        item.classList.add('box');
+        item.innerHTML = 
+		`<i class="${array[i].family} ${array[i].prefix+array[i].name}" style="color: ${array[i].color};"></i>
+		<span>${array[i].name}</span>`;
+
+        containerHTML.append(item);
+    };
+};
+
+
+// function===========================
+function getCategoriesHTML (array) {
+	array.forEach((icon) => {
+		if(!categories.includes(icon.type))
+		{
+			categories.push(icon.type);
+			let option = document.createElement('option');
+			option.value = icon.type;
+			option.innerHTML = icon.type;
+			selectHTML.append(option);
+        };
+    });
+};
+
+
+// function===========================
+function assignColorHTML(array) {
+	array.forEach(icon => {
+		if(icon.color == null)
+		{
+			let randomColor = Math.floor(Math.random()*16777215).toString(16);
+			icon.color = '#' + randomColor;
+		};
+	});
+};
+
+
+
+// function===========================
+function filterBy(array,category) {
+	let filteredIcons;
+
+	if(category != 'All')
+	{
+	filteredIcons = array.filter((icon) => category == icon.type);
+	}
+	else
+	{
+	filteredIcons = array;
+	};
+
+	renderIconsHTLM(filteredIcons); 
+};
